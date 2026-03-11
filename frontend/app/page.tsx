@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Message = {
   role: "user" | "assistant";
@@ -74,18 +76,18 @@ export default function Home() {
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`flex ${
-              msg.role === "user" ? "justify-end" : "justify-start"
-            }`}
+            className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"
+              }`}
           >
             <div
-              className={`max-w-[70%] px-4 py-3 rounded-xl shadow-sm ${
-                msg.role === "user"
+              className={`max-w-[70%] px-4 py-3 rounded-xl shadow-sm ${msg.role === "user"
                   ? "bg-black text-white rounded-br-none"
                   : "bg-white text-gray-800 rounded-bl-none"
-              }`}
+                }`}
             >
-              {msg.content}
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {msg.content}
+              </ReactMarkdown>
             </div>
           </div>
         ))}
