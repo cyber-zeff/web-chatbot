@@ -66,8 +66,8 @@ export default function Home() {
     <main className="flex flex-col h-screen bg-gray-100">
 
       {/* Header */}
-      <div className="p-4 border-b bg-white shadow-sm">
-        <h1 className="text-xl font-semibold text-black">AI Chatbot</h1>
+      <div className="p-4 bg-black shadow-sm">
+        <h1 className="text-xl font-semibold text-white">AI Chatbot</h1>
       </div>
 
       {/* Chat Area */}
@@ -104,9 +104,9 @@ export default function Home() {
       </div>
 
       {/* Input Area */}
-      <div className="p-4 bg-white border-t flex gap-3">
+      <div className="px-6 py-4 rounded-full w-[50%] mx-auto mb-5 bg-black border-t flex gap-3">
         <input
-          className="flex-1 border rounded-lg px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-black"
+          className="flex-1 border rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white"
           placeholder="Type a message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -115,7 +115,7 @@ export default function Home() {
 
         <button
           onClick={sendMessage}
-          className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition"
+          className="bg-white text-black px-6 py-2 rounded-lg hover:bg-white/80 transition"
         >
           Send
         </button>
