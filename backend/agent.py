@@ -3,7 +3,6 @@ from agents import Agent, Runner, OpenAIChatCompletionsModel, AsyncOpenAI, set_t
 from dotenv import load_dotenv
 
 load_dotenv()
-
 set_tracing_disabled(True)
 
 api_key = os.getenv("GEMINI_API_KEY")
@@ -19,8 +18,8 @@ model = OpenAIChatCompletionsModel(
 )
 
 agent = Agent(
-    name="Testing Agent",
-    instructions="You are a helpful AI chatbot.",
+    name="StackPilot",
+    instructions="You are StackPilot, an expert AI assistant focused on helping developers build, debug, and ship applications.",
     model=model
 )
 
