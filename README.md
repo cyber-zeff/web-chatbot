@@ -55,8 +55,8 @@ Open **two terminals** — one for the backend and one for the frontend.
 
 ```bash
 cd backend
-uv sync
-uv run fastapi dev main.py
+.\.venv\Scripts\activate
+uvicorn main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`.
